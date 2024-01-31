@@ -31,11 +31,20 @@ export class Home extends React.PureComponent<{}, State> {
 						<Button onClick={this.talk.bind(this)}>test</Button>
 					</Col>
 				</div>
-				<div style={{ position: "fixed", left: 24, top: 18, fontSize: 18, fontWeight: 500,color:"white" }}>
+				<div style={{ position: "fixed", left: 24, top: 18, fontSize: 18, fontWeight: 500, color: "white" }}>
 					{"ChatGPT "}<span style={{ color: "#c5c5d2" }}>{"5"}</span>
 				</div>
 			</div >
 		);
+	}
+
+	componentDidMount(): void {
+		this.setState({
+			talking: true
+		})
+		setTimeout(() => {
+			this.talk()
+		}, 15 * 1000);
 	}
 
 	async talk() {
@@ -91,20 +100,20 @@ const Card = (props: {
 			<span>{Array.from(props.children.split("\n"), ((line, id) => {
 				return <>{id !== 0 ? <br /> : ""}{line}</>
 			}))}
-				{props.talking ? <ShiningDot /> : ""}</span>
+				{props.talking ? <ShiningDot margin={props.children.length>0} /> : ""}</span>
 		</div>
 
 	</div>
 
 }
 
-const ShiningDot = (props: {}) => {
+const ShiningDot = (props: { margin: boolean }) => {
 	return <div style={{
 		display: "inline-flex",
 		justifyContent: "center",
 		alignItems: "center",
 		verticalAlign: "bottom",
-		marginLeft: 5
+		marginLeft: props.margin ? 5 : 0
 	}} >
 		<div style={{
 			borderRadius: 100, background: "#d1d5db", width: 22, height: 22,
