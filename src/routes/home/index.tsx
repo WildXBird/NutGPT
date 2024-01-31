@@ -22,6 +22,7 @@ export class Home extends React.PureComponent<{}, State> {
 			<div style={{ width: "100%", height: "100vh", color: `#d1d5db`, textAlign: "center", background: "#343540", position: "fixed" }}>
 				<div style={{
 					width: 800, maxWidth: "100%", display: "inline-block",
+					paddingLeft: 24, paddingRight: 24,
 					textAlign: "left", paddingTop: 250, maxHeight: "100%", overflow: "scroll"
 				}}>
 					<Card type={"user"} >{"你渴望自由吗？"}</Card>
@@ -100,7 +101,7 @@ const Card = (props: {
 			<span>{Array.from(props.children.split("\n"), ((line, id) => {
 				return <>{id !== 0 ? <br /> : ""}{line}</>
 			}))}
-				{props.talking ? <ShiningDot margin={props.children.length>0} /> : ""}</span>
+				{props.talking ? <ShiningDot margin={props.children.length > 0} /> : ""}</span>
 		</div>
 
 	</div>
