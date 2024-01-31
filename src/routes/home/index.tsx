@@ -32,9 +32,11 @@ export class Home extends React.PureComponent<{}, State> {
 						<Button onClick={this.talk.bind(this)}>test</Button>
 					</Col>
 				</div>
-				<div style={{ position: "fixed", left: 0, top: 0, fontSize: 18, fontWeight: 500, 
-				color: "white", width: "100%", backgroundColor: "#343540",textAlign:"left",
-				padding: "18px 24px" }}>
+				<div style={{
+					position: "fixed", left: 0, top: 0, fontSize: 18, fontWeight: 500,
+					color: "white", width: "100%", backgroundColor: "#343540", textAlign: "left",
+					padding: "18px 24px"
+				}}>
 					{"ChatGPT "}<span style={{ color: "#c5c5d2" }}>{"5"}</span>
 				</div>
 			</div >
