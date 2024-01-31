@@ -32,7 +32,7 @@ export class Home extends React.PureComponent<{}, State> {
 						<Button onClick={this.talk.bind(this)}>test</Button>
 					</Col>
 				</div>
-				<div style={{ position: "fixed", left: 24, top: 18, fontSize: 18, fontWeight: 500, color: "white", width: "100%", backgroundColor: "#343540" }}>
+				<div style={{ position: "fixed", left: 24, top: 18, fontSize: 18, fontWeight: 500, color: "white", width: "100%", backgroundColor: "#343540",textAlign:"left" }}>
 					{"ChatGPT "}<span style={{ color: "#c5c5d2" }}>{"5"}</span>
 				</div>
 			</div >
@@ -45,7 +45,7 @@ export class Home extends React.PureComponent<{}, State> {
 		})
 		setTimeout(() => {
 			this.talk()
-		}, 15 * 1000);
+		}, 10 * 1000);
 	}
 
 	async talk() {
