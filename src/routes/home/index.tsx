@@ -58,6 +58,7 @@ export class Home extends React.PureComponent<{}, State> {
 		})
 		const string = Words
 		let words = string.split("")
+		let extra = false
 		const popOne = () => {
 			const next = words.shift()
 
@@ -69,10 +70,11 @@ export class Home extends React.PureComponent<{}, State> {
 				document.getElementById("bottomLine")?.scrollIntoView();
 			}, 0);
 			if (words.length === 0) {
+				extra = true
 				words = ["，", "。", "因", "为", "我", "是", "自", "由", "的"]
 			}
 			if (words.length !== 0) {
-				const gap = Math.random() * 100
+				const gap = Math.random() * (extra? 1000 : 100)
 				// const gap = 0
 				setTimeout(() => popOne(), gap)
 			}
